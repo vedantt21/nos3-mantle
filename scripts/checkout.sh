@@ -165,6 +165,9 @@ echo "Checkout..."
 gnome-terminal --tab --title="Sample Sim" -- $DFLAGS -v $SIM_DIR:$SIM_DIR --name $SC_NUM"_sample_sim" --network=$SC_NETNAME -w $SIM_BIN $DBOX ./nos3-single-simulator $SC_CFG_FILE sample_sim
 gnome-terminal --title="Sample Checkout" -- $DFLAGS -v $BASE_DIR:$BASE_DIR --name $SC_NUM"_sample_checkout" --network=$SC_NETNAME -w $BASE_DIR $DBOX ./components/sample/fsw/standalone/build/sample_checkout
 
+gnome-terminal --tab --title="Example Sim" -- $DFLAGS -v $SIM_DIR:$SIM_DIR --name $SC_NUM"_example_sim" --network=$SC_NETNAME -w $SIM_BIN $DBOX ./nos3-single-simulator $SC_CFG_FILE example_sim
+gnome-terminal --title="Example Checkout" -- $DFLAGS -v $BASE_DIR:$BASE_DIR --name $SC_NUM"_example_checkout" --network=$SC_NETNAME -w $BASE_DIR $DBOX ./components/example/fsw/standalone/build/example_checkout
+
 
 ##
 ## Star Tracker

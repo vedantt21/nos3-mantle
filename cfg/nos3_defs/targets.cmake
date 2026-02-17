@@ -107,6 +107,7 @@ list(APPEND MISSION_GLOBAL_APPLIST
     # Components
     #
         arducam/fsw/cfs
+        example/fsw/cfs
         generic_adcs/fsw/cfs
         generic_css/fsw/cfs
         generic_eps/fsw/cfs
