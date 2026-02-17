@@ -164,7 +164,7 @@
         <simulator>
             <name>example-sim</name>
             <active>true</active>
-            <library>libsample_sim.so</library>
+            <library>libexample_sim.so</library>
             <hardware-model>
                 <type>SAMPLE</type>
                 <connections>
