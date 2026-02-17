@@ -34,3 +34,9 @@ docs/wiki/_build
 docs/wiki/_templates
 *.bkp
 *.html
+
+# Python venv
+.venv/
+venv/
+__pycache__/
+*.pyc
