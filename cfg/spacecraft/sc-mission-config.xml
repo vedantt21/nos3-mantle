@@ -60,6 +60,9 @@
 		<sample>
 			<enable>true</enable>
 		</sample>
+		<tcs>
+			<enable>true</enable>
+		</tcs>
 		<st>
 			<enable>true</enable>
 		</st>

@@ -1,0 +1,78 @@
+2026-03-10 03:33:56.803235 [ DEBUG ] - SimConfig::SimConfig:  sim_logger is NOW valid.
+2026-03-10 03:33:56.803374 [ INFO  ] - main:  "generic-tcs-sim" simulator starting
+2026-03-10 03:33:56.803404 [ DEBUG ] - SimConfig::run_simulator:  SimConfig is created, logger is valid, and run_simulator is starting.
+2026-03-10 03:33:56.803672 [ DEBUG ] - SimConfig::get_config_for_simulator:  Configuration for simulator "generic-tcs-sim" is:
+
+2026-03-10 03:33:56.803771 [ DEBUG ] - 
+<?xml version="1.0" encoding="utf-8"?>
+<common>
+    <log-config-file>sim_log_config.xml</log-config-file>
+    <!-- https://nsidc.org/data/icesat/glas-date-conversion-tool/date_convert/​ -->
+    <!-- 533156400.0 UTC = 11/23/2016 07:00:00.00 UTC -->
+    <!-- 552110400.0 UTC = 06/30/2017 16:00:00.00 UTC -->
+    <!-- 814048200.0 UTC = 10/18/2025 08:30:00.00 UTC -->
+    <!-- 814254200.0 UTC = 10/20/2025 17:42:20.00 UTC (DEFAULT) -->
+    <absolute-start-time>814254200.0</absolute-start-time>
+    <sim-microseconds-per-tick>10000</sim-microseconds-per-tick>
+    <real-microseconds-per-tick>10000</real-microseconds-per-tick>
+    <nos-connection-string>tcp://nos-engine-server:12001</nos-connection-string>
+</common>
+
+2026-03-10 03:33:56.803813 [WARNING] - SimConfig::run_simulator:  Simulator "generic-tcs-sim" is not active in "nos3-simulator.xml".  Not running.
+Try --help
+2026-03-10 03:33:56.803849 [ INFO  ] - main:  "generic-tcs-sim" simulator terminating
+2026-03-10 03:36:43.107996 [ DEBUG ] - SimConfig::SimConfig:  sim_logger is NOW valid.
+2026-03-10 03:36:43.108195 [ INFO  ] - main:  "tcs-sim" simulator starting
+2026-03-10 03:36:43.108245 [ DEBUG ] - SimConfig::run_simulator:  SimConfig is created, logger is valid, and run_simulator is starting.
+2026-03-10 03:36:43.108772 [ INFO  ] - SimConfig::get_config_for_simulator:  Loading plug-in library libtcs_sim.so
+2026-03-10 03:36:43.114378 [ INFO  ] - SimHardwareModelFactory::RegisterMaker:  Registered hardware model for key TCS
+2026-03-10 03:36:43.114488 [ INFO  ] - SimDataProviderFactory::RegisterMaker:  Registered data provider for key TCS_42_PROVIDER
+2026-03-10 03:36:43.114522 [ INFO  ] - SimDataProviderFactory::RegisterMaker:  Registered data provider for key TCS_PROVIDER
+2026-03-10 03:36:43.114569 [ DEBUG ] - SimConfig::get_config_for_simulator:  Configuration for simulator "tcs-sim" is:
+
+2026-03-10 03:36:43.114766 [ DEBUG ] - 
+<?xml version="1.0" encoding="utf-8"?>
+<common>
+    <log-config-file>sim_log_config.xml</log-config-file>
+    <!-- https://nsidc.org/data/icesat/glas-date-conversion-tool/date_convert/​ -->
+    <!-- 533156400.0 UTC = 11/23/2016 07:00:00.00 UTC -->
+    <!-- 552110400.0 UTC = 06/30/2017 16:00:00.00 UTC -->
+    <!-- 814048200.0 UTC = 10/18/2025 08:30:00.00 UTC -->
+    <!-- 814254200.0 UTC = 10/20/2025 17:42:20.00 UTC (DEFAULT) -->
+    <absolute-start-time>814254200.0</absolute-start-time>
+    <sim-microseconds-per-tick>10000</sim-microseconds-per-tick>
+    <real-microseconds-per-tick>10000</real-microseconds-per-tick>
+    <nos-connection-string>tcp://nos-engine-server:12001</nos-connection-string>
+</common>
+<simulator>
+    <name>tcs-sim</name>
+    <active>true</active>
+    <library>libtcs_sim.so</library>
+    <hardware-model>
+        <type>TCS</type>
+        <connections>
+            <connection>
+                <type>command</type>
+                <bus-name>command</bus-name>
+                <node-name>tcs-sim-command-node</node-name>
+            </connection>
+            <connection>
+                <type>usart</type>
+                <bus-name>usart_16</bus-name>
+                <node-port>16</node-port>
+            </connection>
+        </connections>
+        <data-provider>
+            <type>TCS_PROVIDER</type>
+        </data-provider>
+    </hardware-model>
+</simulator>
+
+2026-03-10 03:36:43.114921 [ INFO  ] - SimHardwareModelFactory::Create:  Creating hardware model for key TCS
+2026-03-10 03:36:43.160346 [ DEBUG ] - SimIHardwareModel::SimIHardwareModel:  Command node tcs-sim-command-node now active on command bus command.
+2026-03-10 03:36:43.160517 [ INFO  ] - TcsHardwareModel::TcsHardwareModel:  NOS Engine connection string: tcp://nos-engine-server:12001.
+2026-03-10 03:36:43.160803 [ INFO  ] - SimDataProviderFactory::Create:  Creating data provider for key TCS_PROVIDER
+2026-03-10 03:36:43.160916 [ INFO  ] - TcsHardwareModel::TcsHardwareModel:  Data provider TCS_PROVIDER created.
+2026-03-10 03:36:43.204245 [ INFO  ] - TcsHardwareModel::TcsHardwareModel:  Now on UART bus name usart_16, port 16.
+2026-03-10 03:36:43.245939 [ INFO  ] - TcsHardwareModel::TcsHardwareModel:  Now on time bus named command.
+2026-03-10 03:36:43.246033 [ INFO  ] - TcsHardwareModel::TcsHardwareModel:  Construction complete.
